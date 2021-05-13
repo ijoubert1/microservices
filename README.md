@@ -5,6 +5,7 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 Basic Microservices Structure
 
 -----------
++ Ribbon con anotación @LoadBalanced
 + Ribbon (Balanceo de Carga)
 (solo para Item)
     Levantando dos instancias de servicio producto: -Dserver.port=9001
