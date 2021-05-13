@@ -15,7 +15,7 @@ import com.formacionbdi.spring.app.items.models.service.ItemService;
 public class ItemController {
 
 	@Autowired
-	@Qualifier("itemServiceFeignImpl")
+	@Qualifier("itemServiceImpl")
 	private ItemService itemService;
 	
 	@GetMapping("/list")
