@@ -1,6 +1,24 @@
 # microservices
 Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
+II - Eureka Server (Servidor de Registro)
+
+Servicios: item-service, product-service
+Type: Eureka Clients
+product-service
+  Instancia 1: 8001
+  Instancia 2: 9001
+item-service: 8002
+
+-----------
++ JAXB
+
+Servicio: eureka-server-service
+Type: Eureka Server
+Port: 8761 (default)
+
+-----------
+-----------
 
 I - Basic Microservices Structure
 
