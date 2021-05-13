@@ -5,6 +5,13 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 Basic Microservices Structure
 
 -----------
++ Ribbon (Balanceo de Carga)
+(solo para Item)
+    Levantando dos instancias de servicio producto: -Dserver.port=9001
+    Instancia 1: 8001
+    Instancia 2: 9001
+
+-----------
 (solo para Item)
 + Feign (Lib para comunicación entre microservicios - Original de Netflix) 
 Interface/Feign client: ProductRestClient
