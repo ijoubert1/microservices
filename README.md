@@ -1,6 +1,18 @@
 # microservices
 Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
+III - Spring Cloud Config Server
+
+Servicio: config-server-service
+Type: Config Server
+Port: 8888
+
+COnfig: 
+item-service.properties
+
+-----------
+-----------
+
 II - Eureka Server (Servidor de Registro)
 -----------
 + Zuul (Enrutamiento dinámico, filtros pre/post, Latencia, entre otros)
