@@ -1,5 +1,20 @@
 # microservices
 Microservices with Spring Boot and Spring Cloud Netflix Eureka
+V - Common
+
+
+-----------
+ijoubert@NTBK-TECH834:~/Documentos/CursosUdemy/Microservicios/microservices/spring-boot-service-commons$ mvnw install
+
+-----------
+JAVA_HOME: /usr/lib/jvm/java-11-oracle
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-oracle:/usr/share/maven/bin
+
+-----------
+Servicio: common-service
+
+-----------
+-----------
 
 IV - CRUD
 -----------
@@ -24,7 +39,7 @@ Dev
 Prod
 
 -----------
-Servicios: item-service
+Servicio: item-service
 Type: Config client
 File: bootstrap.properties
 
