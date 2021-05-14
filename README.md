@@ -4,6 +4,9 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 II - Eureka Server (Servidor de Registro)
 
 -----------
++ Hystrix (libreria para tolerancia a fallos, latencia)
+
+-----------
 Escalando servicios
 product-service: dynamic ports
 
@@ -13,7 +16,7 @@ Type: Eureka Clients
 product-service
   Instancia 1: 8001
   Instancia 2: 9001
-item-service: 8002
+item-service: 8002 (fijo por ser el endpoint)
 
 -----------
 + JAXB

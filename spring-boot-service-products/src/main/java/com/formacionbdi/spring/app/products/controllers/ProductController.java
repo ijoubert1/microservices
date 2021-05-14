@@ -38,10 +38,18 @@ public class ProductController {
 //		product.setPort(env.getProperty("local.server.port"));
 		product.setPort(port);
 		
+		//Error
 		boolean error = false;
 		if(error) {
 			throw new Exception("Error loading product detail");
 		}
+		
+		//Latency
+//		try {
+//			Thread.sleep(2000l);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		return product;
 	}	
 }
