@@ -3,7 +3,7 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 II - Eureka Server (Servidor de Registro)
 -----------
-+ Zuul (Enrutamiento dinámico, filtros pre/post, entre otros)
++ Zuul (Enrutamiento dinámico, filtros pre/post, Latencia, entre otros)
 Servicio: zuul-server-service
 Type: Eureka Client, Zuul Server
 Port: 8090
