@@ -38,7 +38,7 @@ public class ItemController {
 	private Environment env;
 
 	@Autowired
-	@Qualifier("itemServiceImpl")
+	@Qualifier("itemServiceFeignImpl")
 	private ItemService itemService;
 	
 	@Value("${config.text}")
@@ -86,7 +86,7 @@ public class ItemController {
 	@PostMapping("/create")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Product create(@RequestBody Product product) {
-		return itemService.save(product);
+		return itemService.create(product);
 	}
 	
 	@PutMapping("/update/{id}")

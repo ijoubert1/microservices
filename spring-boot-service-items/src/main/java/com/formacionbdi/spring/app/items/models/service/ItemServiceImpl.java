@@ -38,7 +38,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public Product save(Product product) {
+	public Product create(Product product) {
 		HttpEntity<Product> body = new HttpEntity<>(product);
 		ResponseEntity<Product> response = restClient.exchange("http://product-service/create/", HttpMethod.POST, body,
 				Product.class);
