@@ -3,17 +3,30 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 III - Spring Cloud Config Server
 
-Servicio: config-server-service
-Type: Config Server
-Port: 8888
+-----------
++Refresh Scope (item)
+Actuator
 
+-----------
++Profiles (item)
+Default
+Dev
+Prod
+
+-----------
+Servicios: item-service
+Type: Config client
+File: bootstrap.properties
+
+-----------
 Config repo:
 /home/ijoubert/Escritorio/config
 File: item-service.properties
 
-Servicios: item-service
-Type: Config client
-File: bootstrap.properties
+-----------
+Servicio: config-server-service
+Type: Config Server
+Port: 8888
 
 -----------
 -----------
