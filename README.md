@@ -4,7 +4,6 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 
 V - Common
-
 -----------
 Exclude autoconfiguration for datasource class
 
