@@ -1,8 +1,18 @@
 # microservices
 Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
-III - Spring Cloud Config Server
+IV - CRUD
+-----------
+Product CRUD
+GET - List
+POST - Create
+PUT - Update
+DELETE - Delete
 
+-----------
+-----------
+
+III - Spring Cloud Config Server
 -----------
 +Refresh Scope (item)
 Actuator

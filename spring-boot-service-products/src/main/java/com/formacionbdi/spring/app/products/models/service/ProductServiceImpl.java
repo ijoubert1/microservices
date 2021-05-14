@@ -26,4 +26,16 @@ public class ProductServiceImpl implements ProductService {
 		return (Product) dao.findById(id).orElse(null);
 	}
 
+	@Transactional
+	@Override
+	public Product save(Product product) {
+		return dao.save(product);
+	}
+
+	@Transactional
+	@Override
+	public void deleteById(Long id) {
+		dao.deleteById(id);
+	}
+
 }
