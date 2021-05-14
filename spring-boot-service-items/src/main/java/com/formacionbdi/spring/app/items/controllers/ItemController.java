@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,9 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 public class ItemController {
 	
 	private static Logger log = LoggerFactory.getLogger(ItemController.class);
+	
+	@Autowired
+	private Environment env;
 
 	@Autowired
 	@Qualifier("itemServiceImpl")
@@ -62,6 +66,12 @@ public class ItemController {
 		Map<String, String> json = new HashMap<>();
 		json.put("text", text);
 		json.put("port", port);
+		
+		if(env.getActiveProfiles().length > 0 && env.getActiveProfiles()[0].equals("dev")) {
+			json.put("author.name", env.getProperty("config.author.name"));
+			json.put("author.email", env.getProperty("config.author.email"));
+		}
+		
 		return new ResponseEntity<Map<String, String>>(json, HttpStatus.OK);
 	}
 }
