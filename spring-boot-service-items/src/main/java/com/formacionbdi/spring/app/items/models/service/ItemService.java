@@ -3,7 +3,7 @@ package com.formacionbdi.spring.app.items.models.service;
 import java.util.List;
 
 import com.formacionbdi.spring.app.items.models.Item;
-import com.formacionbdi.spring.app.items.models.Product;
+import com.formacionbdi.spring.app.commons.models.entity.Product;
 
 public interface ItemService {
 	

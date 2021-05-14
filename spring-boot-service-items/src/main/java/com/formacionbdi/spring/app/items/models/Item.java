@@ -1,5 +1,7 @@
 package com.formacionbdi.spring.app.items.models;
 
+import com.formacionbdi.spring.app.commons.models.entity.Product;
+
 public class Item {
 
 	private Product product;

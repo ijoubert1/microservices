@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.formacionbdi.spring.app.items.models.Item;
-import com.formacionbdi.spring.app.items.models.Product;
+import com.formacionbdi.spring.app.commons.models.entity.Product;
 import com.formacionbdi.spring.app.items.models.service.ItemService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
