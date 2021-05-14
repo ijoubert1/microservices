@@ -6,9 +6,12 @@ III - Spring Cloud Config Server
 Servicio: config-server-service
 Type: Config Server
 Port: 8888
-
-COnfig: 
+Config: 
 item-service.properties
+
+Servicios: item-service
+Type: Config client
+File: bootstrap.properties
 
 -----------
 -----------
