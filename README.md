@@ -1,7 +1,12 @@
 # microservices
 Microservices with Spring Boot and Spring Cloud Netflix Eureka
+-----------
+-----------
+
 V - Common
 
+-----------
+Exclude autoconfiguration for datasource class
 
 -----------
 ijoubert@NTBK-TECH834:~/Documentos/CursosUdemy/Microservicios/microservices/spring-boot-service-commons$ mvnw install
