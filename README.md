@@ -34,7 +34,6 @@ Port: 8761 (default)
 -----------
 
 I - Basic Microservices Structure
-
 -----------
 + Ribbon con anotación @LoadBalanced
 + Ribbon (Balanceo de Carga)
