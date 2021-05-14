@@ -3,6 +3,11 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 II - Eureka Server (Servidor de Registro)
 
+-----------
+Escalando servicios
+product-service: dynamic ports
+
+-----------
 Servicios: item-service, product-service
 Type: Eureka Clients
 product-service
