@@ -3,6 +3,34 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 -----------
 
+VI - Spring Cloud Security
+-----------
+Servicio: oauth-service
+Port: 9020
+Se comunica con user-service a través de Feign Rest Client
+Implementa UserDetailsService
+
+-----------
+Lib: users-common-service
+
+-----------
+Spring Security (FW de seguridad, ofrece autenticación y autorización (ACL))
+Json Web Token (JWT) (Estándar abierto para implementar seguridad en aplicaciones API Rest)
+
+-----------
+Repositorio Rest para el CRUD
+Queries personalizados
+
+-----------
+JPA for queries
+
+-----------
+Tables: users, roles, users_roles
+Servicio: user-service
+
+-----------
+-----------
+
 V - Common
 -----------
 Exclude autoconfiguration for datasource class
