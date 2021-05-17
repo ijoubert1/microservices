@@ -5,6 +5,12 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 VI - Spring Cloud Security
 -----------
+Oauth and Zuul as clients of config-server-service
+
+-----------
+Zuul as Resource Config Server
+
+-----------
 Servicio: oauth-service
 Port: 9020
 Se comunica con user-service a través de Feign Rest Client
