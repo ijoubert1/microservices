@@ -1,5 +1,7 @@
 package com.formacionbdi.spring.app.oauth.security;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
@@ -24,6 +27,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private AdditionalInfoToken additionalInfoToken;
 	
 	private static Logger log = LoggerFactory.getLogger(AuthorizationServerConfig.class);
 
@@ -47,9 +53,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+		TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+		tokenEnhancerChain.setTokenEnhancers(Arrays.asList(additionalInfoToken, accessTokenConverter()));
+		
 		log.info("Entering configure 3");
+		
 		endpoints.authenticationManager(authenticationManager).tokenStore(tokenStore())
-				.accessTokenConverter(accessTokenConverter());
+				.accessTokenConverter(accessTokenConverter()).tokenEnhancer(tokenEnhancerChain);
 	}
 
 	@Bean

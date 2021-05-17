@@ -17,7 +17,7 @@ import com.formacionbdi.spring.app.oauth.clients.UserFeignClient;
 import com.formacionbdi.spring.app.users.commons.models.entity.User;
 
 @Service
-public class UserService implements UserDetailsService {
+public class UserService implements UserDetailsService, UserInfoService {
 
 	private static Logger log = LoggerFactory.getLogger(UserService.class);
 
@@ -40,5 +40,10 @@ public class UserService implements UserDetailsService {
 		
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				user.getEnabled(), true, true, true, authorities);
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		return userClient.findByUsername(username);
 	}
 }
