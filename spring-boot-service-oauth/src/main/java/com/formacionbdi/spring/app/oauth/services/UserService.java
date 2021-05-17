@@ -27,10 +27,12 @@ public class UserService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userClient.findByUsername(username);
+		
 		if (user == null) {
 			log.error("User not found " + username);
 			throw new UsernameNotFoundException("User not found");
 		}
+		
 		List<GrantedAuthority> authorities = user.getRoles().stream().map(r -> new SimpleGrantedAuthority(r.getName()))
 				.peek(authority -> log.info("Authority: " + authority.getAuthority()))
 				.collect(Collectors.toList());
