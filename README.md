@@ -4,6 +4,14 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 
 VI - Spring Cloud Security
+
+-----------
+Validación de intentos
+
+-----------
+Manejo de eventos en la autenticación
+Éxito, fracaso
+
 -----------
 Cors: Intercambio de recursos de origen cruzado
 
