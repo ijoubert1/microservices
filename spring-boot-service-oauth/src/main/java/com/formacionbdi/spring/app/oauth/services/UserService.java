@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import com.formacionbdi.spring.app.oauth.clients.UserFeignClient;
 import com.formacionbdi.spring.app.users.commons.models.entity.User;
 
+import feign.FeignException;
+
 @Service
 public class UserService implements UserDetailsService, UserInfoService {
 
@@ -26,20 +28,20 @@ public class UserService implements UserDetailsService, UserInfoService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userClient.findByUsername(username);
-		
-		if (user == null) {
+		try {
+			User user = userClient.findByUsername(username);
+
+			List<GrantedAuthority> authorities = user.getRoles().stream()
+					.map(r -> new SimpleGrantedAuthority(r.getName()))
+					.peek(authority -> log.info("Authority: " + authority.getAuthority())).collect(Collectors.toList());
+			log.info("User authenticated: " + username);
+
+			return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+					user.getEnabled(), true, true, true, authorities);
+		} catch (FeignException e) {
 			log.error("User not found " + username);
 			throw new UsernameNotFoundException("User not found");
 		}
-		
-		List<GrantedAuthority> authorities = user.getRoles().stream().map(r -> new SimpleGrantedAuthority(r.getName()))
-				.peek(authority -> log.info("Authority: " + authority.getAuthority()))
-				.collect(Collectors.toList());
-		log.info("User authenticated: " + username);
-		
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-				user.getEnabled(), true, true, true, authorities);
 	}
 
 	@Override
