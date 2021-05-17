@@ -22,6 +22,23 @@ Servicio: product-service
 -----------
 
 VI - Spring Cloud Security
+
+-----------
+Validación de intentos
+
+-----------
+Manejo de eventos en la autenticación
+Éxito, fracaso
+
+-----------
+Cors: Intercambio de recursos de origen cruzado
+
+-----------
+Oauth and Zuul as clients of config-server-service
+
+-----------
+Zuul as Resource Config Server
+
 -----------
 Servicio: oauth-service
 Port: 9020
