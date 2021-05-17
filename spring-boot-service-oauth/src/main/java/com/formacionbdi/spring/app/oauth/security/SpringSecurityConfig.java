@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationEventPublisher;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -19,6 +20,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private UserDetailsService userDetailsService;
 	
+	@Autowired
+	private AuthenticationEventPublisher authenticationEventPublisher;
+	
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		log.info("Entering passwordEncoder");
@@ -29,7 +33,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		log.info("Entering configure springSecurity");
-		auth.userDetailsService(this.userDetailsService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(this.userDetailsService).passwordEncoder(passwordEncoder())
+		.and().authenticationEventPublisher(authenticationEventPublisher);
 	}
 
 	@Override
