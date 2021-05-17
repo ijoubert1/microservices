@@ -19,7 +19,7 @@ import com.formacionbdi.spring.app.users.commons.models.entity.User;
 @Service
 public class UserService implements UserDetailsService {
 
-	private Logger log = LoggerFactory.getLogger(UserService.class);
+	private static Logger log = LoggerFactory.getLogger(UserService.class);
 
 	@Autowired
 	private UserFeignClient userClient;

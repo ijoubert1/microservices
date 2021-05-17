@@ -1,5 +1,7 @@
 package com.formacionbdi.spring.app.oauth.security;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,15 +24,19 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
+	private static Logger log = LoggerFactory.getLogger(AuthorizationServerConfig.class);
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+		log.info("Entering configure 1");
 		security.tokenKeyAccess("permitAll()")
 		.checkTokenAccess("isAuthenticated()");
 	}
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+		log.info("Entering configure 2");
 		clients.inMemory()
 		.withClient("frontendapp")
 		.secret(passwordEncoder.encode("12345"))
@@ -41,17 +47,20 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+		log.info("Entering configure 3");
 		endpoints.authenticationManager(authenticationManager).tokenStore(tokenStore())
 				.accessTokenConverter(accessTokenConverter());
 	}
 
 	@Bean
 	public JwtTokenStore tokenStore() {
+		log.info("Entering tokenStore");
 		return new JwtTokenStore(accessTokenConverter());
 	}
 
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
+		log.info("Entering accessTokenConverter");
 		JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
 		jwtAccessTokenConverter.setSigningKey("some-secret-code");
 		return jwtAccessTokenConverter;
