@@ -5,6 +5,9 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 VI - Spring Cloud Security
 -----------
+Cors: Intercambio de recursos de origen cruzado
+
+-----------
 Oauth and Zuul as clients of config-server-service
 
 -----------
