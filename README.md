@@ -3,6 +3,24 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 -----------
 
+VII - MySql
+-----------
+PENDING - Actualizar repo item-service-config de github como privado
+
+-----------
+POSTGRES - PENDING
+BD: db_springboot_cloud
+Servicio: usuario-service
+
+-----------
+MYSQL
+BD: db_springboot_cloud
+Servicio: product-service
+(Actualizado para conectarse al servidor de configuración)
+
+-----------
+-----------
+
 VI - Spring Cloud Security
 -----------
 Servicio: oauth-service
