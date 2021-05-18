@@ -5,6 +5,10 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 IX - Docker (Contenedor (instancia de imagenes))
 -----------
+Configurando docker container de config-server en microservicios item, product, oaut, zuul
+7f97f751a2b7   config-server:v1
+
+-----------
 Configurando docker container de eureka en microservicios user, item, product, oaut, zuul
 c1f651855f72   eureka-server:v1
 
