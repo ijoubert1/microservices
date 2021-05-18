@@ -5,7 +5,15 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 IX - Docker (Contenedor (instancia de imagenes))
 -----------
-PENDING: Docker image for postgres db
+Configurando docker container de eureka en microservicios user, item, product, oaut, zuul
+c1f651855f72   eureka-server:v1
+
+-----------
+Configurando docker container en repo git
+dffc7092f5d0   mysql:8
+
+-----------
+PENDING: Download Docker image for postgres db
 Port: 5432
 
 -----------
