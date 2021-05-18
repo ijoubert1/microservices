@@ -3,6 +3,22 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 -----------
 
+VIII - Trazabilidad distribuída
+-----------
+Sleuth dependency for 
+zuul-server-service, item-service, oauth-service, product-service, user-service
+
+-----------
+SpanId: Seguimiento individual dentro de un microservicio
+TraceId: Representa todo el recorrido de la petición a través de los distintos microservicios
+
+-----------
+Servidor Zipkin (Servidor para guardar las trazas y permite monitorizarlas)
+Spring Cloud Sleuth (Dependencia para trazabilidad distribuída)
+
+-----------
+-----------
+
 VII - MySql
 -----------
 PENDING - Actualizar repo item-service-config de github como privado
