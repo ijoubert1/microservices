@@ -4,8 +4,25 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 
 IX - Docker (Contenedor (instancia de imagenes))
+-----------
+PENDING: Docker image for postgres db
+Port: 5432
 
-Comandos
+-----------
+Otros comandos:
+> sudo netstat -tlpn
+
+Comandos:
+
+> docker pull mysql:8
+> docker images
+> docker run -p 3310:3306 --name mysql-server --network springcloud -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=db_springboot_cloud -d mysql:8
+(3310 due to 3306 was busy with other service)
+
+> mvn clean package
+> docker build -t eureka-server:v1 .
+> docker run -p 8761:8761 --name eureka-server --network springcloud eureka-server:v1
+
 > mvn clean package
 > docker build -t config-server:v1 .
 > docker images 
