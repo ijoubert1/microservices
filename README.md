@@ -3,7 +3,38 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 -----------
 
+IX - Docker (Contenedor (instancia de imagenes))
+
+Comandos
+> mvn clean package
+> docker build -t config-server:v1 .
+> docker images 
+> docker network create springcloud
+> docker run -p 8888:8888 --name config-server --network springcloud config-server:v1
+
+-----------
+Docker network
+name: springcloud
+
+-----------
+Servicio: config-server-service
+(docker image) config-server v1
+(base) openjdk 12
+
+-----------
+-----------
+
 VIII - Trazabilidad distribuída
+-----------
+PENDING - RabbitMQ
+Los microservicios (producers) envían los mensajes a RabbitMQ y Zipkin (consumer) los lee desde las colas. 
+Default port: 5672
+Admin GUI - default port: 15672
+
+-----------
+PENDING - Zipkin
+Default port: 9411
+
 -----------
 Sleuth dependency for 
 zuul-server-service, item-service, oauth-service, product-service, user-service
