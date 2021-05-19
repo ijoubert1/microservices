@@ -3,7 +3,30 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 -----------
 -----------
 
-IX - Docker (Contenedor (instancia de imagenes))
+IX - Docker Container (instancia de imagenes)
+-----------
+Docker compose
+> docker-compose up
+> docker-compose down -v
+> docker-compose up -d <service_name>
+
+-----------
+PENDING - Dockerfile for Zipkin
+
+-----------
+PENDING - Zipkin DDL Schema in MySql
+
+-----------
+PENDING - Download and run docker image for RabbitMQ
+username:guest
+password:guest
+port gui: 15672
+port server: 5672
+
+-----------
+Escalando servicio products
+> docker run -P --name service-products2 --network springcloud service-products:v1
+
 -----------
 Containers para items service
 > mvn clean package -DskipTests
@@ -31,7 +54,7 @@ Containers para Zuul
 -----------
 docker network inspect springcloud
 
-Containers para los microservicios
+Containers para servicio products
 > mvn clean package -DskipTests
 > docker build -t service-products:v1 .
 > docker run -P --name service-products --network springcloud service-products:v1
