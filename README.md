@@ -5,6 +5,12 @@ Microservices with Spring Boot and Spring Cloud Netflix Eureka
 
 IX - Docker (Contenedor (instancia de imagenes))
 -----------
+Containers para items service
+> mvn clean package -DskipTests
+> docker build -t service-items:v1 .
+> docker run -p 8005:8005 --name service-items --network springcloud service-items:v1
+
+-----------
 Containers para oauth service
 > mvn clean package -DskipTests
 > docker build -t service-oauth:v1 .
